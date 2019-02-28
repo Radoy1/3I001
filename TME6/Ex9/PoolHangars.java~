@@ -1,0 +1,26 @@
+public class PoolHangars implements Hangar{
+
+    private Hangar[] pool;
+
+    public PoolHangars(int n){
+	pool = new Hangar[n];
+    }
+
+    public Hangar getHangar(int i){
+	boolean trouve=false;
+
+	if (i==0)
+	    i++;
+	
+	while (trouve && i < Hangar.length){
+	    if (Hangar[i].getOccupe() == true)
+		i++;
+	    else
+		trouve = true;
+	}
+
+	return Hangar[i];
+    }
+    
+}
+	    

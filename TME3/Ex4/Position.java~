@@ -1,0 +1,9 @@
+public class Position{
+    int x;
+    int j;
+
+    public Position(int i, int y){
+	x=i;
+	this.j=y;
+    }
+}

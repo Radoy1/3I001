@@ -1,0 +1,8 @@
+
+public class Trieur implements Runnable{
+
+    private Tableau tab;
+    
+    public Trieur(Tableau tab){
+	this.tab = tab;
+}

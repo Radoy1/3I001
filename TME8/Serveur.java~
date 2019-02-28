@@ -1,0 +1,24 @@
+import java.util.concurrent.locks*;
+
+public class Serveur{
+
+    private ReentrantLock lock = new ReantrantLock();
+    private Condition pris     = lock.newCondition();
+    private Condition requete  = lock.newCondition();
+
+    public void run(){
+
+	try{
+	    while(true){
+		attendreRequete();
+		traiterRequete();
+	    }catch(InterruptedException e){
+		System.out.println("Serveur Interrompu");
+	    }
+	}
+    }
+
+}
+
+    
+	    

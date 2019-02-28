@@ -1,0 +1,12 @@
+public class Test{
+    public static void main(String[] args){
+
+	AleaStock stock   = new AleaStock(); 
+	Chariot chariot   = new Chariot(40,5);
+	Thread chargeur   = new Thread (new Chargeur(stock, chariot));
+	Thread dechargeur = new Thread(new Dechargeur(stock, chariot));
+	stock.remplirStock(10,0);
+	chargeur.start();
+	dechargeur.start();
+    }
+}

@@ -1,0 +1,12 @@
+public class Hangar{
+
+    private Loco loco;
+    private boolean occupe;
+    private int id;
+    private static int cpt = 0;
+    
+    public Hangar(){
+	occupe = false;
+	id = cpt++;
+    }
+}

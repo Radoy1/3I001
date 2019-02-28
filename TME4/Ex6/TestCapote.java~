@@ -1,0 +1,11 @@
+public class TestCapote{
+
+    public static void main(String[] args){
+
+	Thread capote = new Thread(new Capote());
+
+	capote.start();
+    }
+}
+
+	

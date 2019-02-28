@@ -1,0 +1,17 @@
+public class Chargeur implements Runnable{
+
+    
+    private AleaStock stock;
+    private Chariot   chariot;
+
+    public Chargeur(AleaStock stock, Chariot chariot){
+	this.stock   = stock;
+	this.chariot = chariot;
+    }
+
+    public void run(){
+	while(!stock.estVide()){
+	    chariot.charger(stock.extraireStock());
+	}
+    }
+}

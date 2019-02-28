@@ -1,0 +1,9 @@
+import java.util.concurrent.locks.*;
+
+public class EnsembleDonnees implements Runnable{
+
+    private ReentrantReadWriteLock lock;
+
+    public EnsembleDonnees(){
+
+    }

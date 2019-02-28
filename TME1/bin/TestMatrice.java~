@@ -1,0 +1,19 @@
+import java.io.File;
+
+public class TestMatrice {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MatriceEntiere a = new MatriceEntiere(new File(args[2]));
+		System.out.println("1");
+		MatriceEntiere b = new MatriceEntiere(4, 4);
+		System.out.println("2");
+		b.initialisationAZero();
+		System.out.println("3");
+		a.afficherMatrice();
+		System.out.println("4");
+		b.afficherMatrice();
+		
+	}
+
+}

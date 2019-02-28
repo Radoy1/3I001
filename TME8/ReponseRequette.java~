@@ -1,0 +1,7 @@
+public class ReponseRequette implements Runnable{
+
+    private String message;
+    private int numeroRequette;
+    private Client client;
+    private Random random = new Random();
+    

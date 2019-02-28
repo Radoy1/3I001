@@ -1,0 +1,24 @@
+
+public class Babouin implements Runnable{
+
+    private Corde    c;
+    private Position p;
+
+    public Babouin (Corde c){
+	this.c = c;
+	this.p = p;
+    }
+
+    public void run(){
+
+	try{
+	    c.acceder(p);
+	    System.out.println(this.toString() + " a pris la corde.");
+	    traverser();
+	    System.out.println(this.toString() + " est arrive.");
+	    c.relacher(p);
+	}catch(InterruptedException e){
+	    System.out.println("Pb babouin !");
+	}
+    }
+}

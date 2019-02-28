@@ -1,0 +1,11 @@
+public class DessineLigne extends threads{
+    private Point p1,p2;
+    private Window win;
+    
+    public DessineLigne(java.awt.Point p1, java.awt.Point p2){
+	this.p1=p1;
+	this.p2=p2;
+    }
+    
+    public void run(){
+	plotLine

@@ -1,0 +1,60 @@
+import java.util.concurrent.*;
+import java.util.concurrent.locks.*;
+
+public class Corde{
+
+    private Semaphore     s;
+    private Semaphore     condition;
+    private int           cpt;
+    private int           cpt2;
+    private Position      sens;
+    private ReentrantLock lock;
+    private Condition     accessOK;
+    private Condition     plein;
+    
+    public Corde(){
+	s         = new Semaphore(1);
+	condition = new Semaphore(0);
+	cpt       = 0;
+	cpt2      = 0;
+	sens      = null;
+	lock      = new ReentrantLock();
+	plein     = lock.newCondition();
+	accessOK  = lock.newCondition();
+    }
+
+    public void acceder(Position p) throws InterruptedException{
+	lock.lock();
+	try{
+	    while( p != sens && cpt2 > 0){
+		accessOK.await();
+	    }
+	    while(cpt == 5){
+		plein.await();
+	    }
+	    cpt++;
+	    cpt2++;
+	    sens = p;
+	}finally{
+	    lock.unlock();
+	}
+    }
+
+    public void relacher(Position p)throws InterruptedException{
+	lock.lock();
+	try{
+	    cpt--;
+	    cpt2--;
+	    plein.signalAll();
+	    if(cpt2 == 0){
+		sens = null;
+		accessOK.signalAll();
+	    }
+		
+	}finally{
+	    lock.unlock();
+	}
+    }
+}
+
+	

@@ -1,0 +1,8 @@
+public class Test{
+    public static void main(String[] args){
+
+	Salon salon = new Salon(3);
+	Thread c1 = new Thread(new Client(salon));
+	Thread c2 = new Thread(new Client(salon));
+	Thread c3 = new Thread(new Client(salon));
+	Thread c4 = new Thread(new Client(salon));

@@ -1,0 +1,6 @@
+public class Salon{
+
+    private Client[] tabClients;
+    private int nbOccupees;
+
+    
