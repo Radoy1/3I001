@@ -1,8 +1,0 @@
-public class SegAcceuil implements Runnable{
-    private int hangarID;
-
-    public SegAcceuil(){
-    }
-
-    public synchronized void appeler(int hangarID){
-	this.hangarID = hangarID;
